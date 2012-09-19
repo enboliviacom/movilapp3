@@ -1,0 +1,304 @@
+/*page 2*/
+div#page2 .package_list{
+	margin: 4px 0px 0px 0px;
+}
+div#page2 .package_list ul{
+	margin: -1px 0px 0px;
+}
+
+/*pageDetail */
+div#pageDetail ul#modules_fixed li div{
+	padding: 10px 0px 10px 15px;
+}
+ul#modules_fixed li div img{
+	margin-right: 15px;
+}
+div#pageDetail fieldset.cotizador .dd-item2{
+	background-color: #ECECEC;
+	border-bottom: 1px solid #494949;
+}
+div#pageDetail fieldset.cotizador div{
+	background: #cccccc ;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff), to( #f1f1f1)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #ffffff, #f1f1f1); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #ffffff, #f1f1f1); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #ffffff, #f1f1f1); /* IE10 */
+	background-image:      -o-linear-gradient( #ffffff, #f1f1f1); /* Opera 11.10+ */
+	background-image:         linear-gradient( #ffffff, #f1f1f1);
+	border: 1px solid #CCC;
+	color: #2F3E46;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 10px 40px 10px 10px;
+	text-shadow: 0 2px 2px #eeeeee;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+div#pageDetail fieldset.cotizador div:hover {
+	background: #dfdfdf;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #f6f6f6 ), to( #e0e0e0 )); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #f6f6f6, #e0e0e0); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #f6f6f6, #e0e0e0); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #f6f6f6, #e0e0e0); /* IE10 */
+	background-image:      -o-linear-gradient( #f6f6f6, #e0e0e0); /* Opera 11.10+ */
+	background-image:         linear-gradient( #f6f6f6, #e0e0e0);
+	border: 1px solid #bbbbbb;
+	font-weight: bold;
+	color: #0B0030;
+	text-shadow: 0 1px 0 #ffffff;
+}
+div#pageDetail fieldset.cotizador div:first-child{
+	border-top-left-radius: 0.6em;
+	border-top-right-radius: 0.6em;
+}
+div#pageDetail fieldset.cotizador div:last-child{
+	border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+}
+div#pageDetail fieldset.cotizador div img{
+	display: inline-block;
+	margin-right: 4px;
+}
+div#pageDetail fieldset.cotizador div input[type="checkbox"]{
+	display: inline-block;
+}
+div#pageDetail fieldset.cotizador div label{
+	cursor: pointer;
+	display: inline-block;
+	width:95%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* Margenes y espaciados generales */
+.ui-page{
+	width: 99%;
+}
+.ui-header .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+}
+
+.ui-footer .ui-title {
+	margin-right:20px;
+	margin-left:20px;
+	white-space:normal; 
+ }
+ 
+.ui-content { 
+	padding: 5px 0px;
+}
+.ui-field-contain{
+	padding: 0.15em 0px;
+}
+.ui-content ul#modules_fixed li:first-child{
+	border-top-left-radius: 0.6em;
+	border-top-right-radius: 0.6em;
+}
+.ui-content ul#modules_fixed li:last-child{
+	border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+} 
+
+.dd-item2 {
+    padding: 2px;
+    vertical-align: top;
+    z-index: 1000;
+}
+
+/* Ancho a cajas de texto (numero) para precio y tiempo de entrega */
+#pageDetail div.price_time{
+	background-color: #f9f9f9;
+	width:99%;
+	margin: 5px 0px 0px 0px;	
+}
+
+#pageDetail div.price_time .precio{
+	display: inline-block;
+	width:45%;
+	margin-right: 4%;
+}
+#pageDetail div.price_time .tiempo{
+	display: inline-block;
+	width:47%;	
+}
+#pageDetail div.price_time .precio label,
+#pageDetail div.price_time .precio input,
+#pageDetail div.price_time .tiempo label,
+#pageDetail div.price_time .tiempo input{
+	width:100%;	
+}
+#page3 div.content_modules,
+#pageDetail div.content_modules{
+	margin: 10px 0px 0px 0px;
+}
+
+/* cambio de color de boton enviar cotizacion*/
+.ui-bar-e{
+	border: 1px solid #8cc63f;
+	background:url(images/btn_1.png) no-repeat center center; 
+	/*background: #8cc63f;*/
+	font-weight: bold;
+	cursor: pointer;
+	text-shadow: 0 1px 1px #e3e3e3;
+	/*text-shadow: 0 1px 1px #696969;*/
+	text-decoration: none;
+	/*background-image: -webkit-gradient(linear, left top, left bottom, from( #9ad945), to( #7eb238));  Saf4+, Chrome 
+	background-image: -webkit-linear-gradient( #9ad945, #7eb238);  Chrome 10+, Saf5.1+ 
+	background-image:    -moz-linear-gradient( #9ad945, #7eb238);  FF3.6 
+	background-image:     -ms-linear-gradient( #9ad945, #7eb238);  IE10 
+	background-image:      -o-linear-gradient( #9ad945, #7eb238);  Opera 11.10+
+	background-image:         linear-gradient( #9ad945, #7eb238);*/
+}
+
+/* sobreposicion de imagen a check*/
+div#pageDetail fieldset.cotizador div label input[type="checkbox"]{
+	display:none;
+	opacity: 0;
+	-webkit-opacity: 0;
+	   -moz-opacity: 0;
+	    -ms-opacity: 0;
+	     -o-opacity: 0;
+	filter:alpha(opacity=0);
+}
+div#pageDetail fieldset.cotizador div label span{
+	background: #8CC63F;
+	border-radius: 3px 3px 3px 3px;
+	cursor:pointer;
+	display: inline-block;
+	margin-right: 4px;
+	width:18px;
+	height:18px;
+
+	opacity: 0.8;
+	-webkit-opacity: 0.8;
+	   -moz-opacity: 0.8;
+	    -ms-opacity: 0.8;
+	     -o-opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+div#pageDetail fieldset.cotizador div label span.disa_b{
+	background:#494949;
+	background-image:url(images/icons-18-white.png);
+	background-position:-648px top;
+}
+div#pageDetail fieldset.cotizador div label span.off_b{
+	background-image:url(images/icons-18-white.png);
+	background-position:-684px top;
+}
+div#pageDetail fieldset.cotizador div label span.on_b{
+	background-image:url(images/icons-18-white.png);
+	background-position:-648px top;
+}
+/* logotipo */
+#indexHome p{ display: block; text-align: center; font-size: 14px; color: #494949;}
+/*#indexHome p.desc{ font-size: 14px; color: #494949; }*/
+#indexHome p.img_logo{
+	background:transparent url(images/logo_enbolivia_com.png) no-repeat center center; 
+	display: block;
+	width:300px;
+	height:100px;
+	text-align:center;
+	margin: 0px auto;
+}
+
+@media screen and (min-width: 1000px) {
+	#indexHome p.img_logo{
+		background:url(images/logo_enbolivia_com_big.png)no-repeat center center; 
+		display: block;
+		width:800px;
+		height:300px;
+		text-align:center;
+		margin: 0px auto;
+	}
+}
+
+/* Formulario de Contacto */
+form#form_price{
+	margin: 0 auto;
+    max-width: 700px;
+    overflow: hidden;
+    position: relative;
+}
+
+form#form_price input[type="text"],
+form#form_price input[type="tel"],
+form#form_price input[type="email"]{
+	max-width: 690px;
+	margin: 5px;
+    width: 96%;
+}
+form#form_price a[role="button"],
+form#form_price button[type="submit"]{
+	/*width:50%;*/
+	width:155px;
+	margin: 10px auto;
+}
+
+/*Adicionado por @JuanC*/
+span.warning {
+    color: #ff0000;
+	display:block;
+	margin-left:8px;
+	width:96%;
+}
+
+/* Posicion fija para las cabeceras*/
+/*#indexHome div.header_fix,
+#page2 div.header_fix,
+#page3 div.header_fix,
+#pageDetail div.header_fix{
+	position: fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	z-index:999999;
+}*/
+
+
+/* Cambio de Boton a Verde Home */
+a.btn_green{
+	background:url(images/btn.png) no-repeat center center; 
+	border: 0;
+	box-shadow: none; 
+	color: #0B0030;
+	height: 43px;
+	width: 163px;
+	text-shadow: 0 1px 1px #e3e3e3;
+}
+a.btn_green .ui-btn-inner{
+	padding: 12px 0 0 25px;
+	text-align: left;
+}
+
+/* Posicion Fija Header Footer */
+/*.ui-header {
+	height:45px;
+	left:0;
+	line-height:45px;
+	padding:0;
+	position:absolute; 
+	top:0; 
+	width:100%;
+	z-index:2;
+}
+.ui-content {
+	bottom:48px; 
+	left:0;
+	position:absolute; 
+	top:45px; 
+	width:100%;
+	z-index:1;
+}
+.ui-footer {
+	bottom:0; 
+	height:48px;
+	left:0;
+	padding:0;
+	position:absolute; 
+	width:100%;
+	z-index:2;
+}
+*/

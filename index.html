@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=320; user-scalable=no" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>enbolivia.com - cotizador móvil</title>
+        <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />-->
+        <!--<link rel="stylesheet" href="pgandjqm-style-override.css" type="text/css" charset="utf-8" />-->
+        <!--<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>-->
+        <!--<script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>-->
+        <!--<script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="main.js"></script>
+        <!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+        <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0a2.min.css" />
+        <!-- <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" /> -->
+        <link rel="stylesheet" href="enbolivia.css" />
+        <!--<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" />///-->
+        <link rel="stylesheet" href="pgandjqm-style-override.css" type="text/css" charset="utf-8" />
+		<script src="jquery.mobile/jquery-1.6.4.min"></script>		
+        <!--<script src="jquery.mobile/jquery-1.7.2.min.js"></script>-->
+        <!-- <script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.0a2.min.js"></script>
+        <script type="text/javascript" src="iscroll.js"></script>
+    </head>
+    <body onLoad="init();">
+        <script>
+
+            /*var str_url='http://192.168.2.13/TEST/jquery/request.php';*/
+            /*var str_url='http://192.168.0.194/TEST/jquery/request.php';*/
+            //--**--var str_url='http://192.168.2.13/TEST/enbo_cotizacion/service.php?s=p';
+            //--var str_url='http://enbolivia.com/ajax/service.php?s=p';
+        
+        
+            //--var str_ur2='http://enbolivia.com/ajax/service.php?s=m';
+        
+            var str_url='http://localhost/TEST/enbo_cotizacion/service.php?s=p';
+            var str_url2='http://localhost/TEST/enbo_cotizacion/service.php?s=m';
+            $(function() {
+ 
+                $("#callAjax").click(function() {
+                    var theName = $.trim($("#theName").val());
+ 
+                    if(theName.length > 0)
+                    {
+                        try{
+                            $.ajax({
+                                type: "POST",
+                                url: str_url,
+                                data: ({name: theName}),
+                                cache: false,
+                                dataType: "text",
+                                success: onSuccess,
+                                error: onError,
+                                statusCode: {
+                                    404: function() {
+                                        alert("page not found");
+                                    }
+                                }
+                            });
+                        }catch(e){
+                            alert(e)
+                        }
+                        
+                    }
+                });
+                
+                $("#rqPaquete").click(function() {  paquete.request();  });
+                $("#upPaquete").click(function() {  paquete.getList();  });
+                $("#rqModulo").click(function() {  modulo.request();  });
+                $("#upModulo").click(function() {  modulo.getList();  });
+ 
+                $("#resultLog").ajaxError(function(event, request, settings, exception) {
+                    //  $("#resultLog").html("Error Calling: " + settings.url + "<br />HTTP Code: " + request.status);
+                });
+ 
+                function onSuccess(data){
+                    $("#resultLog").html("Result: --" + data+"--");
+                }
+                function onSuccessPaquete(data){
+                    
+                    //$("#resultLog").html("Result: --" + data+"--");
+                }
+                function onError(jqXHR, textStatus) {
+                    $("#resultLog").html("Request failed: " + textStatus +"--");
+                    //alert( "Request failed: " + textStatus );
+                }
+
+                
+ 
+            });
+        </script>
+        <div data-role="page" id="indexHome">
+            <div data-role="header">
+                <h1>enbolivia.com - cotizador móvil</h1>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <!-- <p>Bienvenidos a</p> -->
+					<p class="img_logo">&nbsp</p>
+                    <p>L&iacute;deres en Dise&ntilde;o y desarrollo de p&aacute;ginas Web en Bolivia desde 1999.</p>
+                    <p>Nuestro negocio es la Web, nuestros servicios incluyen posicionamiento Web (SEO), Hosting, registro de dominios y el mejor manejador de contenidos Web Site Publisher (WSP), garantizamos su presencia en Internet.</p>
+                    <p>enbolivia.com S.R.L. - Av. S&aacute;nchez Lima - No. 2061<br>
+                        Ed. Rosario - Piso 7 - Casilla 1706 <br>
+                        Fax: <a href="tel:22415690">(+591-2)2415690</a><br>
+                        Tel&eacute;fono: <a href="tel:22422542">(+591-2)2422542</a><br>
+                        Email: <a href="mailto:info@enbolivia.com">info@enbolivia.com</a> - <a href="http://www.enbolivia.com">www.enbolivia.com</a>
+                    </p>                       
+                </div>
+            </div>
+
+            <div data-role="footer">
+                <h4>
+                    <!--<a href="#indexHome">Inicio</a>-->
+                    <a href="#page2" class="btn_green">Paquetes</a>
+                    <!--<a href="#page3">Módulos</a>-->
+                </h4>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="header">
+                <h1>Paquetes</h1>
+				<a href="#indexHome" data-icon="arrow-l">&nbsp;</a>
+            </div>
+            <div data-role="content" class="package_list">
+                <ul id="list_paquete" data-role="listview" class="ui-listview">
+                    <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-btn-up-c">
+						<div class="ui-btn-inner ui-li">
+							<div class="ui-btn-text">
+								<a href="index.html" class="ui-link-inherit">
+                                    <img src="images/paquete/empresa.gif" class="ui-li-thumb">
+                                    <h3 class="ui-li-heading">Titulo</h3>
+                                    <p class="ui-li-desc">Descripcion</p>
+                                </a>
+							</div>
+						</div>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h1>
+                    <a href="#indexHome">Inicio</a>
+                    <!--<a href="#">Paquetes</a>-->
+                    <!--<a href="#page3">Módulos</a>-->
+                </h1>
+            </div>
+        </div>
+        <div data-role="page" id="page3">
+            <div data-role="header">
+                <h1>Módulos</h1>
+            </div>
+            <div data-role="content" >
+                <!--<input id="rqModulo" type="button" value="create Modulo" />-->
+                <!--<input id="upModulo" type="button" value="draw Modulo" />-->
+                <ul id="list_modulo" data-role="listview" class="ui-listview">
+                    <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">
+                                    <img src="images/paquete/empresa.gif" class="ui-li-thumb">
+                                    <h3 class="ui-li-heading">Titulo</h3>
+                                    <p class="ui-li-desc">Descripcion</p>
+                                </a></div></div>
+                    </li>
+
+                </ul>
+            </div>
+			<div id="js_func"></div>
+            <div data-role="footer">
+                <h1>
+                    <a href="#indexHome">Inicio</a>
+                    <a href="#page2">Paquetes</a>
+                    <!--<a href="#page3">Módulos</a>-->
+                </h1>
+            </div>
+        </div>
+		<div data-role="page" id="pageDetail">
+            <div data-role="header" >
+                <h1 id="detail_header">Detalle de modulos</h1>
+				<a href="#page2" data-icon="arrow-l">&nbsp;</a>
+            </div>
+            <div data-role="fieldcontain" class="price_time">
+                <div class="precio">
+            	   <label>Costo: (USD)</label>
+                   <input type="number" name="cost" id="cost" value="0" min="1" max="100000" data-mini="true" readonly="readonly" />
+				   <input type="hidden" name="packageId" id="packageId" value="" />
+                </div>
+                <div class="tiempo">
+                    <label>Tiempo de entrega: (días)</label>
+                    <input type="number" value="0"  name="time" id="time" min="1" max="60" data-mini="true" readonly="readonly" />
+                </div>
+            </div>
+            <div data-role="content" class="content_modules">
+                <h3>Módulos asignados al paquete</h3>
+				<div data-role="fieldcontain" >
+					<fieldset data-role="controlgroup" id="modules_fixed" class="cotizador" data-type="vertical" data-mini="true">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain" >
+					<fieldset data-role="controlgroup" id="modules_assigned" class="cotizador" data-type="vertical" data-mini="true">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain" >
+					<fieldset data-role="controlgroup" id="modules_optionals" class="cotizador" data-type="vertical" data-mini="true">
+					</fieldset>
+				</div>
+            </div>
+			<div id="resto"></div>
+            <div data-role="footer">
+                <h1>
+                    <a href="#indexHome">Inicio</a>
+                    <a href="#page2">Paquetes</a>
+                    <!--<a href="#page3">Módulos</a>-->
+					<!--<a href="mailto:juan@enbolivia.com?subject=Cotizacion%20de%20paquete&body=prueba%20de%20mensaje" data-theme="ui-bar ui-bar-e" class="ui-link-inherit">Enviar cotización</a>-->
+					<!--<a href="javascript:sendByAjax()" id="send_price2222" data-theme="ui-bar ui-bar-e" class="ui-link-inherit">Enviar cotización</a>-->
+					<input type="button" data-theme="ui-bar ui-bar-e" id="send_price" onclick="sendPackages();" class="ui-link-inherit" value="Crear cotización" />
+					<!--<a href="" id="send_price" onclick="sendPackages()" data-theme="ui-bar ui-bar-e"  class="ui-link-inherit" />Crear cotización</a>-->
+                </h1>
+            </div>
+        </div>
+		<div data-role="page" id="price">
+			<div data-role="header">
+				<h1>Datos personales</h1>
+				<a href="#page2" data-icon="arrow-l">&nbsp;</a>
+			</div>
+			<div data-role="content" >
+				<form action="http://www.enbolivia.com/class/sendcot2.php" name="form_price" id="form_price" class="validate" method="post">
+					<input type="text" id="name" placeholder="Nombre" name="frmnombre" autofocus="autofocus" required="required" />
+					<span id="name_msg" class="warning">Debe indicar su nombre</span>
+					<input type="text" id="company" placeholder="Empresa" name="frmempresa" required="required" />
+					<span id="company_msg" class="warning">Debe indicar su empresa</span>
+					<input type="tel" id="telephone" placeholder="Telefono" name="frmtelefono" required="required" />
+					<span id="telephone_msg" class="warning">Debe indicar su telefono</span>
+					<input type="email" id="email" placeholder="tu@email.com" name="frmmail" required="required" />
+					<span id="email_msg" class="warning">Debe indicar una dirección de correo eletrónico válida</span>
+					<input type="text" id="city" placeholder="Ciudad, País" name="frmlugar" required="required" />
+					<span id="city_msg" class="warning">Debe indicar Ciudad y País</span>
+					<input type="hidden" name="frmpaquetes" id="modules" value="" />
+					<input type="hidden" name="frmidpaquete" id="package" value="" />
+					<input type="hidden" name="frmtiempo" id="tiempo" value="" />
+					<input type="hidden" name="frmcosto" id="costo" value="" />
+					<!--<button type="submit" value="submit-value" data-theme="ui-bar ui-bar-e"  class="ui-link-inherit">Enviar</button>-->
+					<input type="button" value="Enviar" onclick="sendByAjax()" data-theme="ui-bar ui-bar-e"  class="ui-link-inherit" />
+				</form>
+			</div>
+		</div>
+    </body>
+</html>
